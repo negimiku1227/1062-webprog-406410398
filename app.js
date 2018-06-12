@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+var routes = require('./routes/account');
 var users = require('./routes/users');
 
 // DataBase 
@@ -46,7 +46,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use('/', routes);
+app.use('/account', routes);
 app.use('/users', users);
 
 
