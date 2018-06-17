@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
         var data = rows;
 
         // use index.ejs
-        res.render('index', { title: 'Account Information', data: data, user: user });
+        res.render('account', { title: 'Account Information', data: data, user: user });
     });
 
 });
@@ -57,7 +57,8 @@ router.post('/userAdd', function(req, res, next) {
             var sql = {
                 userid: req.body.userid,
                 password: req.body.password,
-                email: req.body.email
+                email: req.body.email,
+                phone: req.body.phone
             };
 
             //console.log(sql);
