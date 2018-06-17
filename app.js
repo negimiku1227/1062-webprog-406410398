@@ -5,8 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/account');
+var routes = require('./routes/index');
 var users = require('./routes/users');
+var account = require('./routes/account');
 
 // DataBase 
 var mysql = require("mysql");
@@ -46,8 +47,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use('/account', routes);
+app.use('/', routes);
 app.use('/users', users);
+app.use('/account', account);
 
 
 // catch 404 and forward to error handler

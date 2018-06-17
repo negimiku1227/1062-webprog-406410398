@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
             console.log(err);
         }
         var data = rows;
-
+        console.log(data);
         // use index.ejs
         res.render('index', { title: 'Account Information', data: data, user: user });
     });
